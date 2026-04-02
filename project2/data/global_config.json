@@ -1,0 +1,6 @@
+{
+  "apps": {
+"sauce_demo_login": "https://www.saucedemo.com/",
+    "event_booking_url": "https://eventhub.rahulshettyacademy.com/login"
+  }
+}

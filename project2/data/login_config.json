@@ -1,0 +1,36 @@
+{
+  "login_scenarios": {
+    "happy_flow": {
+      "username": "standard_user",
+      "password": "secret_sauce",
+      "expected": {
+        "result": "success",
+        "title": "Products"
+      }
+    },
+    "invalid_credentials": {
+      "username": "locked_out_user",
+      "password": "secret_sauce",
+      "expected": {
+        "result": "error",
+        "message": "Epic sadface: Sorry, this user has been locked out."
+      }
+    },
+    "empty_username": {
+      "username": "",
+      "password": "secret_sauce",
+      "expected": {
+        "result": "error",
+        "message": "Epic sadface: Username is required"
+      }
+    },
+    "empty_password": {
+      "username": "standard_user",
+      "password": "",
+      "expected": {
+        "result": "error",
+        "message": "Epic sadface: Password is required"
+      }
+    }
+  }
+}

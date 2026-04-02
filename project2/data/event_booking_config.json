@@ -1,0 +1,16 @@
+{
+  "booking_scenarios": {
+    "happy_path_booking": {
+      "username": "vashutosh@playwright.com",
+      "password": "Shubh@123",
+      "event_name": "World Tech Summit",
+      "expected": {
+        "result": "success",
+        "confirmation_text": "Booking confirmed"
+      },
+      "customer_name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "1234567890"
+    }
+  }
+}

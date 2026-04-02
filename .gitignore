@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+egg-info/
+*.egg-info/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg
+*.manifest
+*.spec
+
+# Pytest cache
+test/__pycache__/
+PytestPython/PytestPython/__pycache__/
+pytestDir/__pycache__/
+
+
+
+
+# Logs
+*.log
+*.log.*
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python environment
+venv/
+.env
+.env.*
+
+# Miscellaneous
+*.bak
+*.swp
+*.tmp
+*.temp
