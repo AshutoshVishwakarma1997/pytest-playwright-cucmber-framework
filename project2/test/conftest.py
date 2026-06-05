@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -23,10 +24,12 @@ def configdata():
 @pytest.fixture
 def browser_instance(playwright: Playwright, base_url, request):
     browser_name = request.config.getoption("--browser_name")
+    headless = os.getenv("CI", "").lower() == "true"
+
     if browser_name == "chrome":
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch(headless=headless)
     elif browser_name == "firefox":
-        browser = playwright.firefox.launch(headless=False)
+        browser = playwright.firefox.launch(headless=headless)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
 
