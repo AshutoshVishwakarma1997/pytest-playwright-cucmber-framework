@@ -24,7 +24,12 @@ def configdata():
 @pytest.fixture
 def browser_instance(playwright: Playwright, base_url, request):
     browser_name = request.config.getoption("--browser_name")
-    headless = os.getenv("CI", "").lower() == "true"
+    headless_env = os.getenv("HEADLESS")
+    headless = (
+        headless_env.lower() == "true"
+        if headless_env is not None
+        else os.getenv("CI", "").lower() == "true"
+    )
 
     if browser_name == "chrome":
         browser = playwright.chromium.launch(headless=headless)
