@@ -58,17 +58,17 @@ jobs:
         if: env.HEADLESS == 'true'
         run: |
           mkdir -p reports
-          python -m pytest -q project2 -m smoke --browser_name chrome --junitxml=reports/project2-smoke.xml
+          python -m pytest -q project2 -m smoke --browser_name chrome --junitxml=reports/project2-smoke.xml --html=reports/project2-smoke-report.html --self-contained-html
 
       - name: Run pytest smoke suite headed
         if: env.HEADLESS == 'false'
         run: |
           mkdir -p reports
-          xvfb-run -a python -m pytest -q project2 -m smoke --browser_name chrome --junitxml=reports/project2-smoke.xml
+          xvfb-run -a python -m pytest -q project2 -m smoke --browser_name chrome --junitxml=reports/project2-smoke.xml --html=reports/project2-smoke-report.html --self-contained-html
 
-      - name: Upload test report
+      - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: project2-pytest-report
+          name: project2-pytest-reports-${{ env.TEST_ENV }}-headless-${{ env.HEADLESS }}
           path: reports/
